@@ -51,7 +51,6 @@
 		DB40331A21FCE2840056C6F6 /* p1-hello-world-iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "p1-hello-world-iosUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB40331E21FCE2840056C6F6 /* p1_hello_world_iosUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = p1_hello_world_iosUITests.m; sourceTree = "<group>"; };
 		DB40332021FCE2840056C6F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		DB40332D21FCE7C90056C6F6 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Main.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -305,7 +304,6 @@
 			isa = PBXVariantGroup;
 			children = (
 				DB40330121FCE2830056C6F6 /* Base */,
-				DB40332D21FCE7C90056C6F6 /* en */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -438,6 +436,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QCSUBHKBPH;
 				INFOPLIST_FILE = "p1-hello-world-ios/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -454,6 +453,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = QCSUBHKBPH;
 				INFOPLIST_FILE = "p1-hello-world-ios/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
