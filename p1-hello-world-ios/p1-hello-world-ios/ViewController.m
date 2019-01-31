@@ -13,9 +13,18 @@
 @end
 
 @implementation ViewController
+@synthesize gif;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    gif.animationImages = [[NSArray alloc]initWithObjects:
+                           [UIImage imageNamed:@"giphy.gif"],
+                           [UIImage imageNamed:@"giphy.gif"],
+                           
+                           nil];
+    [gif setAnimationRepeatCount:0];
+    gif.animationDuration = 2;
+    [gif startAnimating];
     // Do any additional setup after loading the view, typically from a nib.
 }
 

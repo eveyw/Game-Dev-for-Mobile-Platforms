@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DB2E3D96220158DB0088BE04 /* bg.png in Resources */ = {isa = PBXBuildFile; fileRef = DB2E3D95220158DB0088BE04 /* bg.png */; };
 		DB4032FC21FCE2830056C6F6 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4032FB21FCE2830056C6F6 /* AppDelegate.m */; };
 		DB4032FF21FCE2830056C6F6 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DB4032FE21FCE2830056C6F6 /* ViewController.m */; };
 		DB40330221FCE2830056C6F6 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB40330021FCE2830056C6F6 /* Main.storyboard */; };
@@ -16,6 +15,7 @@
 		DB40330A21FCE2840056C6F6 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DB40330921FCE2840056C6F6 /* main.m */; };
 		DB40331421FCE2840056C6F6 /* p1_hello_world_iosTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB40331321FCE2840056C6F6 /* p1_hello_world_iosTests.m */; };
 		DB40331F21FCE2840056C6F6 /* p1_hello_world_iosUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = DB40331E21FCE2840056C6F6 /* p1_hello_world_iosUITests.m */; };
+		DBBD4B96220271CF006108D5 /* giphy.gif in Resources */ = {isa = PBXBuildFile; fileRef = DBBD4B95220271CF006108D5 /* giphy.gif */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +36,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		DB2E3D95220158DB0088BE04 /* bg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = bg.png; path = ../../../bg.png; sourceTree = "<group>"; };
 		DB4032F721FCE2830056C6F6 /* p1-hello-world-ios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "p1-hello-world-ios.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB4032FA21FCE2830056C6F6 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DB4032FB21FCE2830056C6F6 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -53,6 +52,7 @@
 		DB40331A21FCE2840056C6F6 /* p1-hello-world-iosUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "p1-hello-world-iosUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB40331E21FCE2840056C6F6 /* p1_hello_world_iosUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = p1_hello_world_iosUITests.m; sourceTree = "<group>"; };
 		DB40332021FCE2840056C6F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DBBD4B95220271CF006108D5 /* giphy.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = giphy.gif; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -103,6 +103,7 @@
 		DB4032F921FCE2830056C6F6 /* p1-hello-world-ios */ = {
 			isa = PBXGroup;
 			children = (
+				DBBD4B95220271CF006108D5 /* giphy.gif */,
 				DB4032FA21FCE2830056C6F6 /* AppDelegate.h */,
 				DB4032FB21FCE2830056C6F6 /* AppDelegate.m */,
 				DB4032FD21FCE2830056C6F6 /* ViewController.h */,
@@ -112,7 +113,6 @@
 				DB40330521FCE2840056C6F6 /* LaunchScreen.storyboard */,
 				DB40330821FCE2840056C6F6 /* Info.plist */,
 				DB40330921FCE2840056C6F6 /* main.m */,
-				DB2E3D95220158DB0088BE04 /* bg.png */,
 			);
 			path = "p1-hello-world-ios";
 			sourceTree = "<group>";
@@ -240,7 +240,7 @@
 			files = (
 				DB40330721FCE2840056C6F6 /* LaunchScreen.storyboard in Resources */,
 				DB40330421FCE2840056C6F6 /* Assets.xcassets in Resources */,
-				DB2E3D96220158DB0088BE04 /* bg.png in Resources */,
+				DBBD4B96220271CF006108D5 /* giphy.gif in Resources */,
 				DB40330221FCE2830056C6F6 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
