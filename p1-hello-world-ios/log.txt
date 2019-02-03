@@ -1,0 +1,91 @@
+commit 4d12dec66c01d658c88257193ef4ba77a24e4ecd
+Author: Wen Yang <wyang41@binghamton.edu>
+Date:   Wed Jan 30 19:12:54 2019 -0500
+
+    add gif
+
+ .../p1-hello-world-ios.xcodeproj/project.pbxproj    |   8 ++++----
+ .../UserInterfaceState.xcuserstate                  | Bin 39166 -> 43652 bytes
+ .../p1-hello-world-ios/Base.lproj/Main.storyboard   |   9 ++++++++-
+ .../p1-hello-world-ios/ViewController.h             |   2 ++
+ .../p1-hello-world-ios/ViewController.m             |   9 +++++++++
+ 5 files changed, 23 insertions(+), 5 deletions(-)
+
+commit 0c7770105452829eb69b80a2556a9c7d3ab8c806
+Author: Wen Yang <wyang41@binghamton.edu>
+Date:   Wed Jan 30 19:11:43 2019 -0500
+
+    add gif
+
+ p1-hello-world-ios/p1-hello-world-ios/giphy.gif | Bin 0 -> 3766877 bytes
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 2fb4a437ce04545ed5bef96ad1dc6e0ea9baeb53
+Author: Wen Yang <wyang41@binghamton.edu>
+Date:   Tue Jan 29 23:06:50 2019 -0500
+
+    delete unused function
+
+ .../p1-hello-world-ios.xcodeproj/project.pbxproj    |   4 ++++
+ .../UserInterfaceState.xcuserstate                  | Bin 36876 -> 39166 bytes
+ .../p1-hello-world-ios/Base.lproj/Main.storyboard   |   6 +-----
+ 3 files changed, 5 insertions(+), 5 deletions(-)
+
+commit c516e0c51a9bcfe6bfa9d0eee5953c728a676257
+Author: Eve Yang <31297215+eveyw@users.noreply.github.com>
+Date:   Sun Jan 27 15:26:54 2019 -0500
+
+    Delete .DS_Store
+
+ .DS_Store | Bin 6148 -> 0 bytes
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+
+commit 0288f2b1e52e99de0aedf68992cc0de7e709c63d
+Author: Wen Yang <wyang41@binghamton.edu>
+Date:   Sun Jan 27 14:22:30 2019 -0500
+
+    1
+
+ .../p1-hello-world-ios.xcodeproj/project.pbxproj   |   4 +-
+ .../UserInterfaceState.xcuserstate                 | Bin 29855 -> 36876 bytes
+ .../Base.lproj/LaunchScreen.storyboard             |  16 +++++++-
+ .../p1-hello-world-ios/Base.lproj/Main.storyboard  |  43 +++++++++++++++++++--
+ 4 files changed, 56 insertions(+), 7 deletions(-)
+
+commit 68715f0bfb7c53115dd5a3d941f48cf5f04960f6
+Author: Wen Yang <wyang41@binghamton.edu>
+Date:   Sat Jan 26 14:11:44 2019 -0500
+
+    first try
+
+ .DS_Store                                          | Bin 0 -> 6148 bytes
+ .../p1-hello-world-ios.xcodeproj/project.pbxproj   | 580 +++++++++++++++++++++
+ .../project.xcworkspace/contents.xcworkspacedata   |   7 +
+ .../xcshareddata/IDEWorkspaceChecks.plist          |   8 +
+ .../UserInterfaceState.xcuserstate                 | Bin 0 -> 29855 bytes
+ .../xcschemes/xcschememanagement.plist             |  14 +
+ .../p1-hello-world-ios/AppDelegate.h               |  17 +
+ .../p1-hello-world-ios/AppDelegate.m               |  51 ++
+ .../AppIcon.appiconset/Contents.json               |  98 ++++
+ .../Assets.xcassets/Contents.json                  |   6 +
+ .../Base.lproj/LaunchScreen.storyboard             |  32 ++
+ .../p1-hello-world-ios/Base.lproj/Main.storyboard  |  31 ++
+ p1-hello-world-ios/p1-hello-world-ios/Info.plist   |  45 ++
+ .../p1-hello-world-ios/ViewController.h            |  15 +
+ .../p1-hello-world-ios/ViewController.m            |  23 +
+ .../p1-hello-world-ios/en.lproj/Main.strings       |   1 +
+ p1-hello-world-ios/p1-hello-world-ios/main.m       |  16 +
+ .../p1-hello-world-iosTests/Info.plist             |  22 +
+ .../p1_hello_world_iosTests.m                      |  37 ++
+ .../p1-hello-world-iosUITests/Info.plist           |  22 +
+ .../p1_hello_world_iosUITests.m                    |  38 ++
+ 21 files changed, 1063 insertions(+)
+
+commit 2d219f9b30a3004afb5e98a5f6de69e5dfc547cf
+Author: Eve Yang <31297215+eveyw@users.noreply.github.com>
+Date:   Sat Jan 26 13:41:13 2019 -0500
+
+    Initial commit
+
+ README.md | 2 ++
+ 1 file changed, 2 insertions(+)
