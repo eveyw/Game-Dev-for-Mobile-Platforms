@@ -8,10 +8,10 @@
 
 // #import <Foundation/Foundation.h>
 
-#import "GamesRootController.h"
+#import "GameController.h"
 
-@interface GamesRootController ()
+@interface GameController ()
 
 @end
 
-@implementation GamesRootController
+@implementation GameController
