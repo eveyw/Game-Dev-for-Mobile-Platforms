@@ -7,10 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		DB58C78B220E6F5B00906272 /* MoveView.m in Sources */ = {isa = PBXBuildFile; fileRef = DB58C78A220E6F5A00906272 /* MoveView.m */; };
 		DBA2207722069E900024B836 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = DBA2207622069E900024B836 /* AppDelegate.m */; };
 		DBA2207922069E900024B836 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = DBA2207822069E900024B836 /* GameScene.sks */; };
 		DBA2207B22069E900024B836 /* Actions.sks in Resources */ = {isa = PBXBuildFile; fileRef = DBA2207A22069E900024B836 /* Actions.sks */; };
-		DBA2207E22069E900024B836 /* GameScene.m in Sources */ = {isa = PBXBuildFile; fileRef = DBA2207D22069E900024B836 /* GameScene.m */; };
 		DBA2208122069E900024B836 /* GameViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBA2208022069E900024B836 /* GameViewController.m */; };
 		DBA2208422069E900024B836 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DBA2208222069E900024B836 /* Main.storyboard */; };
 		DBA2208622069E920024B836 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DBA2208522069E920024B836 /* Assets.xcassets */; };
@@ -18,6 +18,7 @@
 		DBA2208C22069E920024B836 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = DBA2208B22069E920024B836 /* main.m */; };
 		DBA2209622069E920024B836 /* _048Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = DBA2209522069E920024B836 /* _048Tests.m */; };
 		DBA220A122069E920024B836 /* _048UITests.m in Sources */ = {isa = PBXBuildFile; fileRef = DBA220A022069E920024B836 /* _048UITests.m */; };
+		DBCFE10F220D401700F3EAFF /* GameController.m in Sources */ = {isa = PBXBuildFile; fileRef = DBCFE10E220D401700F3EAFF /* GameController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,13 +39,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		DB58C78A220E6F5A00906272 /* MoveView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MoveView.m; sourceTree = "<group>"; };
+		DB58C78C220E6F6400906272 /* MoveView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MoveView.h; sourceTree = "<group>"; };
+		DB8F8B1C220BE8DD0068C76C /* GameDefine.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameDefine.h; sourceTree = "<group>"; };
 		DBA2207222069E900024B836 /* 2048.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 2048.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBA2207522069E900024B836 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		DBA2207622069E900024B836 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		DBA2207822069E900024B836 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
 		DBA2207A22069E900024B836 /* Actions.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Actions.sks; sourceTree = "<group>"; };
-		DBA2207C22069E900024B836 /* GameScene.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameScene.h; sourceTree = "<group>"; };
-		DBA2207D22069E900024B836 /* GameScene.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameScene.m; sourceTree = "<group>"; };
 		DBA2207F22069E900024B836 /* GameViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameViewController.h; sourceTree = "<group>"; };
 		DBA2208022069E900024B836 /* GameViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameViewController.m; sourceTree = "<group>"; };
 		DBA2208322069E900024B836 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -58,6 +60,8 @@
 		DBA2209C22069E920024B836 /* 2048UITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 2048UITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		DBA220A022069E920024B836 /* _048UITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = _048UITests.m; sourceTree = "<group>"; };
 		DBA220A222069E920024B836 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DBCFE10D220D3FBF00F3EAFF /* GameController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GameController.h; sourceTree = "<group>"; };
+		DBCFE10E220D401700F3EAFF /* GameController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GameController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,8 +116,6 @@
 				DBA2207622069E900024B836 /* AppDelegate.m */,
 				DBA2207822069E900024B836 /* GameScene.sks */,
 				DBA2207A22069E900024B836 /* Actions.sks */,
-				DBA2207C22069E900024B836 /* GameScene.h */,
-				DBA2207D22069E900024B836 /* GameScene.m */,
 				DBA2207F22069E900024B836 /* GameViewController.h */,
 				DBA2208022069E900024B836 /* GameViewController.m */,
 				DBA2208222069E900024B836 /* Main.storyboard */,
@@ -121,6 +123,11 @@
 				DBA2208722069E920024B836 /* LaunchScreen.storyboard */,
 				DBA2208A22069E920024B836 /* Info.plist */,
 				DBA2208B22069E920024B836 /* main.m */,
+				DB8F8B1C220BE8DD0068C76C /* GameDefine.h */,
+				DBCFE10D220D3FBF00F3EAFF /* GameController.h */,
+				DBCFE10E220D401700F3EAFF /* GameController.m */,
+				DB58C78A220E6F5A00906272 /* MoveView.m */,
+				DB58C78C220E6F6400906272 /* MoveView.h */,
 			);
 			path = 2048;
 			sourceTree = "<group>";
@@ -275,9 +282,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				DBA2207E22069E900024B836 /* GameScene.m in Sources */,
 				DBA2208122069E900024B836 /* GameViewController.m in Sources */,
 				DBA2208C22069E920024B836 /* main.m in Sources */,
+				DB58C78B220E6F5B00906272 /* MoveView.m in Sources */,
+				DBCFE10F220D401700F3EAFF /* GameController.m in Sources */,
 				DBA2207722069E900024B836 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
