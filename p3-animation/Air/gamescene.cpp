@@ -280,3 +280,17 @@ bool gamescene::init()
 
 	return true;
 }
+
+
+
+void gamescene::createBullet(float)
+{
+    
+}
+
+void gamescene::createEnemy(EnemyType t)
+{
+    
+}
+
+
