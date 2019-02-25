@@ -1,4 +1,7 @@
 #include "gamescene.h"
+#include "commData.h"
+#include "Enemy.h"
+#include "Bullet.h"
 
 
 //int gamescene::SumsScore = 0
@@ -285,11 +288,102 @@ bool gamescene::init()
 
 void gamescene::createBullet(float)
 {
-    
+    SimpleAudioEngine::getInstance()->setEffectsVolume(0.3f);
+    SimpleAudioEngine::getInstance()->playEffect("button.mp3");
+    auto hero = this ->getChildByTag(3);
+    if (this->m_isDoubleBullet)
+    {
+        auto leftBullet = Bullet::create(DOUBLEBULLET);
+        leftBullet->setPosition(hero->getPosition()+ Point(-hero->getContentSize().width/3, 0));
+        this->addChild(leftBullet, 5);
+        this->m_vBullets.pushBack(leftBullet);
+        
+        auto rightBullet = Bullet::create(DOUBLEBULLET);
+        rightBullet->setPosition(hero->getPosition()+ Point(hero->getContentSize().width/3, 0));
+        this->addChild(rightBullet, 6);
+        this->m_vBullets.pushBack(rightBullet);
+        
+        this->m_doubleBulletNumber--;
+        if (this->m_doubleBulletNumber <= 0)
+        {
+            this->m_isDoubleBullet = false;
+        }
+    }
+    else
+    {
+        auto bul = Bullet::create(SINGLEBULLET);
+        bul->setPosition(hero->getPositionX(),hero->getPositionY()+ hero->getContentSize().height/2);
+        this->addChild(bul,1,4);
+        m_vBullets.pushBack(bul);
+    }
+}
+
+void gamescene::createLaser(float)
+{
+    if(this->m_isLaser)
+    {
+        auto hero = getChildByTag(3);
+        auto las = Bullet::create(LASER);
+        las->setAnchorPoint(Point(0.5,0.5));
+        las->setPosition(hero->getPositionX()+hero->getContentSize().width/2,hero->getPositionY()+ hero->getContentSize().height/2+las->getContentSize().height/4);
+        this->addChild(las,0,7);
+        m_vLaser.pushBack(las);
+        this->m_isLaser = false;
+    }
+}
+
+void gamescene::createEnemy_bul(float)
+{
+    auto enem = this->getChildByTag(52);
+    if(this->is_undead)
+    {
+        auto enembul = Bullet::create(BOSS_BULLET);
+        enembul->setPosition(enem->getPositionX(), enem->getPositionY()-enem->getContentSize().height/3);
+        enem_vBulets.pushBack(enembul);
+        this->addChild(enembul, 99, 53);
+        auto enembul2 = Bullet::create(BOSS_BULLET);
+        enembul2->setPosition(enem->getPositionX(), enem->getPositionY()-enem->getContentSize().height/3);
+        enem2_vBulets.pushBack(enembul2);
+        this->addChild(enembul2, 99, 53);
+        auto enembul3 = Bullet::create(BOSS_BULLET);
+        enembul3->setPosition(enem->getPositionX(), enem->getPositionY()-enem->getContentSize().height/3);
+        enem3_vBulets.pushBack(enembul3);
+        this->addChild(enembul3, 99, 53);
+        auto enembul4 = Bullet::create(BOSS_BULLET);
+        enembul4->setPosition(enem->getPositionX(), enem->getPositionY()-enem->getContentSize().height/3);
+        enem4_vBulets.pushBack(enembul4);
+        this->addChild(enembul4, 99, 53);
+        auto enembul5 = Bullet::create(BOSS_BULLET);
+        enembul5->setPosition(enem->getPositionX(), enem->getPositionY()-enem->getContentSize().height/3);
+        enem5_vBulets.pushBack(enembul5);
+        this->addChild(enembul5, 99, 53);
+    }
 }
 
 void gamescene::createEnemy(EnemyType t)
 {
+    auto ene = Enemy::create(t);
+    float y = visibleSize.height + (ene->getContentSize().height/2);
+    auto minX = ene->getContentSize().width/2;
+    auto maxX = visibleSize.width- minX;
+    
+    float x = rand()%(int)(maxX - minX) + minX;
+    ene->setPosition(x,y);
+    switch (t)
+    {
+        case SMALLENEMY:
+            this->addChild(ene,5,50);
+            break;
+        case MIDENEMY:
+            this->addChild(ene,5,51);
+            break;
+        case BIGENEMY:
+            this->addChild(ene,5,52);
+            break;
+        default:
+            break;
+    }
+    this-> m_vEnemys.pushBack(ene);
     
 }
 
