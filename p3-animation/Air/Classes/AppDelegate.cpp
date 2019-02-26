@@ -1,4 +1,6 @@
 #include "AppDelegate.h"
+#include "HelloWorldScene.h"
+#include "gamescene.h"
 
 USING_NS_CC;//using namespace cocos2d;
 
