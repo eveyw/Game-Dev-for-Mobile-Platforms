@@ -694,6 +694,20 @@ void gamescene::createEnemy(EnemyType t)
     
 }
 
+void gamescene::createSmall(float)
+{
+    createEnemy(SMALLENEMY);
+}
+void gamescene::createMid(float)
+{
+    createEnemy(MIDENEMY);
+}
+void gamescene::createBig(float)
+{
+    createEnemy(BIGENEMY);
+    this->is_undead = true;
+}
+
 void gamescene::createUfos(UfoType te)
 {
     auto ufo = Ufo::create(te);
@@ -715,4 +729,21 @@ void gamescene::createUfos(UfoType te)
                                       node->removeFromParentAndCleanup(true);
                                   });
     ufo->runAction(Sequence::create(mov1,mov2,mov3,call,NULL));
+}
+
+void gamescene::createSuperBullet(float)
+{
+    createUfos(SUPERBULLET);
+}
+void gamescene::createSuperBomb(float)
+{
+    createUfos(SUPERBOMB);
+}
+void gamescene::createBlood(float)
+{
+    createUfos(BLOOD);
+}
+void gamescene::createSuperLight(float)
+{
+    createUfos(SUPERLIGHT);
 }
