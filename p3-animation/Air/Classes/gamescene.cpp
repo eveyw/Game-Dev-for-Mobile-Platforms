@@ -747,3 +747,277 @@ void gamescene::createSuperLight(float)
 {
     createUfos(SUPERLIGHT);
 }
+
+void gamescene::updateBombLabel()
+{
+    auto menu = this->getChildByTag(101);
+    auto item = menu->getChildByTag(100);
+    auto lbl = (Label *)this->getChildByTag(91);
+    
+    if (this->m_SuperBombNumber <= 0)
+    {
+        item->setVisible(false);
+        lbl->setVisible(false);
+    }
+    else if (this->m_SuperBombNumber == 1)
+    {
+        item->setVisible(true);
+        lbl->setVisible(false);
+    }
+    else
+    {
+        item->setVisible(true);
+        lbl->setVisible(true);
+        lbl->setString(StringUtils::format("X%d", this->m_SuperBombNumber));
+    }
+}
+
+
+void gamescene::pause(Ref *)
+{
+    SimpleAudioEngine::getInstance()->setEffectsVolume(0.3f);
+    SimpleAudioEngine::getInstance()->playEffect("button.mp3");
+    auto menu_P = this->getChildByTag(110);
+    auto itemPause = menu_P->getChildByTag(111);
+    auto menu_R = this->getChildByTag(112);
+    auto itemResume = menu_R->getChildByTag(113);
+    auto menu_B = this->getChildByTag(114);
+    auto itemrePlay = menu_B->getChildByTag(115);
+    auto menu_E = this->getChildByTag(116);
+    auto itemExit = menu_E->getChildByTag(117);
+    
+    
+    itemPause->setVisible(false);
+    this->m_isMenuShow =true;
+    itemResume->setVisible(m_isMenuShow);
+    itemrePlay->setVisible(m_isMenuShow);
+    itemExit->setVisible(m_isMenuShow);
+    this->m_canMove = false;
+    
+    SimpleAudioEngine::getInstance()->pauseBackgroundMusic();
+    Director::getInstance()->pause();
+}
+
+void gamescene::resume(Ref *)
+{
+    SimpleAudioEngine::getInstance()->setEffectsVolume(0.3f);
+    SimpleAudioEngine::getInstance()->playEffect("button.mp3");
+    auto menu_P = this->getChildByTag(110);
+    auto itemPause = menu_P->getChildByTag(111);
+    auto menu_R = this->getChildByTag(112);
+    auto itemResume = menu_R->getChildByTag(113);
+    auto menu_B = this->getChildByTag(114);
+    auto itemrePlay = menu_B->getChildByTag(115);
+    auto menu_E = this->getChildByTag(116);
+    auto itemExit = menu_E->getChildByTag(117);
+    
+    
+    itemPause->setVisible(true);
+    this->m_isMenuShow = false;
+    itemResume->setVisible(m_isMenuShow);
+    itemrePlay->setVisible(m_isMenuShow);
+    itemExit->setVisible(m_isMenuShow);
+    this->m_canMove = true;
+    
+    SimpleAudioEngine::getInstance()->resumeBackgroundMusic();
+    Director::getInstance()->resume();
+}
+
+void gamescene::RePlay(Ref *)
+{
+    SimpleAudioEngine::getInstance()->setEffectsVolume(0.3f);
+    SimpleAudioEngine::getInstance()->playEffect("button.mp3");
+    auto menu_P = this->getChildByTag(110);
+    auto itemPause = menu_P->getChildByTag(111);
+    auto menu_R = this->getChildByTag(112);
+    auto itemResume = menu_R->getChildByTag(113);
+    auto menu_B = this->getChildByTag(114);
+    auto itemrePlay = menu_B->getChildByTag(115);
+    auto menu_E = this->getChildByTag(116);
+    auto itemExit = menu_E->getChildByTag(117);
+    
+    
+    itemPause->setVisible(true);
+    this->m_isMenuShow = false;
+    itemResume->setVisible(m_isMenuShow);
+    itemrePlay->setVisible(m_isMenuShow);
+    itemExit->setVisible(m_isMenuShow);
+    this->m_canMove = true;
+    auto scene = gamescene::createScene();
+    Director::getInstance()->replaceScene(scene);
+    SimpleAudioEngine::getInstance()->resumeBackgroundMusic();
+    Director::getInstance()->resume();
+    
+    
+}
+
+void gamescene::Exit(Ref *)
+{
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_WP8) || (CC_TARGET_PLATFORM == CC_PLATFORM_WINRT)
+    MessageBox("You pressed the close button. Windows Store Apps do not implement a close button.","Alert");
+    return;
+#endif
+    
+    Director::getInstance()->end();
+    
+#if (CC_TARGET_PLATFORM == CC_PLATFORM_IOS)
+    exit(0);
+#endif
+}
+
+void gamescene::updateEnergyLabel()
+{
+    auto menu_u = this->getChildByTag(121);
+    auto item_u = menu_u->getChildByTag(120);
+    auto EnergyBlock_1 = this->getChildByTag(122);
+    auto EnergyBlock_2 = this->getChildByTag(123);
+    auto EnergyBlock_3 = this->getChildByTag(124);
+    auto EnergyBlock_4 = this->getChildByTag(125);
+    auto EnergyBlock_5 = this->getChildByTag(126);
+    if(this->m_EnergyNumber < 1)
+    {
+        item_u->setVisible(false);
+        EnergyBlock_1->setVisible(false);
+        EnergyBlock_2->setVisible(false);
+        EnergyBlock_3->setVisible(false);
+        EnergyBlock_4->setVisible(false);
+        EnergyBlock_5->setVisible(false);
+    }
+    else if(this->m_EnergyNumber < 2 && this->m_EnergyNumber >= 1)
+    {
+        item_u->setVisible(false);
+        EnergyBlock_1->setVisible(true);
+        EnergyBlock_2->setVisible(false);
+        EnergyBlock_3->setVisible(false);
+        EnergyBlock_4->setVisible(false);
+        EnergyBlock_5->setVisible(false);
+    }
+    else if(this->m_EnergyNumber < 3 && this->m_EnergyNumber >= 2)
+    {
+        item_u->setVisible(false);
+        EnergyBlock_1->setVisible(true);
+        EnergyBlock_2->setVisible(true);
+        EnergyBlock_3->setVisible(false);
+        EnergyBlock_4->setVisible(false);
+        EnergyBlock_5->setVisible(false);
+    }
+    else if(this->m_EnergyNumber < 4 && this->m_EnergyNumber >= 3)
+    {
+        item_u->setVisible(false);
+        EnergyBlock_1->setVisible(true);
+        EnergyBlock_2->setVisible(true);
+        EnergyBlock_3->setVisible(true);
+        EnergyBlock_4->setVisible(false);
+        EnergyBlock_5->setVisible(false);
+    }
+    else if(this->m_EnergyNumber < 5 && this->m_EnergyNumber >= 4)
+    {
+        item_u->setVisible(false);
+        EnergyBlock_1->setVisible(true);
+        EnergyBlock_2->setVisible(true);
+        EnergyBlock_3->setVisible(true);
+        EnergyBlock_4->setVisible(true);
+        EnergyBlock_5->setVisible(false);
+    }
+    else
+    {
+        item_u->setVisible(true);
+        EnergyBlock_1->setVisible(true);
+        EnergyBlock_2->setVisible(true);
+        EnergyBlock_3->setVisible(true);
+        EnergyBlock_4->setVisible(true);
+        EnergyBlock_5->setVisible(true);
+    }
+}
+
+void gamescene::L_LevelUp()
+{
+    auto LevelChange = Sprite::createWithSpriteFrameName("shengji.png");
+    LevelChange->setPosition(visibleSize.width/2,visibleSize.height/2);
+    this->addChild(LevelChange,99,130);
+    auto animation = Animation::create();
+    animation->addSpriteFrame(SpriteFrameCache::getInstance()->getSpriteFrameByName("shengji.png"));
+    animation->addSpriteFrame(SpriteFrameCache::getInstance()->getSpriteFrameByName("shengji.png"));
+    animation->setDelayPerUnit(0.2f);
+    auto animate = Animate::create(animation);
+    auto callFunc = CallFuncN::create([=](Node* node)
+                                      {
+                                          LevelChange->removeFromParentAndCleanup(true);
+                                      });
+    LevelChange->runAction(Sequence::create(animate,callFunc,NULL));
+}
+
+void gamescene::bloodupdate()
+{
+    auto yaoping = this->getChildByTag(80);
+    auto yaoping1 = this->getChildByTag(81);
+    auto yaoping2= this->getChildByTag(82);
+    auto yaoping3= this->getChildByTag(83);
+    auto yaoping4= this->getChildByTag(84);
+    if(hero_blood>6)
+    {hero_blood = 6;}
+    if(hero_blood==6)
+    {yaoping->setVisible(true);
+        yaoping1->setVisible(true);
+        yaoping2->setVisible(true);
+        yaoping3->setVisible(true);
+        yaoping4->setVisible(true);}
+    else    if(hero_blood==5)
+    {yaoping->setVisible(true);
+        yaoping1->setVisible(true);
+        yaoping2->setVisible(true);
+        yaoping3->setVisible(true);
+        yaoping4->setVisible(false);}
+    else if(hero_blood==4)
+    {yaoping->setVisible(true);
+        yaoping1->setVisible(true);
+        yaoping2->setVisible(true);
+        yaoping3->setVisible(false);
+        yaoping4->setVisible(false);}
+    else    if(hero_blood==3)
+    {yaoping->setVisible(true);
+        yaoping1->setVisible(true);
+        yaoping2->setVisible(false);
+        yaoping3->setVisible(false);
+        yaoping4->setVisible(false);}
+    else    if(hero_blood==2)
+    {yaoping->setVisible(true);
+        yaoping1->setVisible(false);
+        yaoping2->setVisible(false);
+        yaoping3->setVisible(false);
+        yaoping4->setVisible(false);}
+    else    if(hero_blood==1)
+    {yaoping->setVisible(false);
+        yaoping1->setVisible(false);
+        yaoping2->setVisible(false);
+        yaoping3->setVisible(false);
+        yaoping4->setVisible(false);}
+}
+
+void gamescene::heroBlowup()
+{
+    auto hero1 = this->getChildByTag(3);
+    auto animation  = Animation::create();
+    animation->addSpriteFrame(SpriteFrameCache::getInstance()->getSpriteFrameByName("human.png"));
+    animation->addSpriteFrame(SpriteFrameCache::getInstance()->getSpriteFrameByName("herohit .png"));
+    animation->addSpriteFrame(SpriteFrameCache::getInstance()->getSpriteFrameByName("heroexplode.png"));
+    animation->addSpriteFrame(SpriteFrameCache::getInstance()->getSpriteFrameByName("herodie.png"));
+    animation->setDelayPerUnit(0.4);
+    auto animate = Animate::create(animation);
+    hero1->runAction(animate);
+    this->m_planeActive = false;
+    this->m_canMove = false;
+    
+    auto callFunc = CallFunc::create([=](){
+        auto scene = GameOverScene::createScene(SumScore);
+        Director::getInstance()->replaceScene(scene);
+    });
+    hero1->stopAllActions();
+    hero1->runAction(Sequence::create(animate, callFunc, NULL));
+}
+
+void gamescene::herohit()
+{
+    hero_blood=hero_blood-1;
+    bloodupdate();
+}
