@@ -1,0 +1,220 @@
+commit 2531f1cc3c8aab545a5a2f390304f55c55c9a90f
+Author: Wen Yang <wyang41@binghamton.edu>
+Date:   Wed Feb 27 04:17:17 2019 -0500
+
+    1
+
+ p3-animation/Air/Classes/gamescene.cpp | 274 +++++++++++++++++++++++++++++++++
+ 1 file changed, 274 insertions(+)
+
+commit 5df254e1ab0c2e764095c3678e9eeb811666340c
+Author: Wen Yang <wyang41@binghamton.edu>
+Date:   Tue Feb 26 20:50:24 2019 -0500
+
+    y
+
+ p3-animation/Air/Classes/gamescene.cpp | 31 ++++++++++++++++++++
+ p3-animation/Air/Classes/gamescene.h   | 53 ++++++++++++++++++++++++++++++++++
+ 2 files changed, 84 insertions(+)
+
+commit 710b1714be9b1952412810c4f7f7ffc0886b100c
+Author: Wen Yang <wyang41@binghamton.edu>
+Date:   Tue Feb 26 17:39:29 2019 -0500
+
+    y
+
+ p3-animation/Air/Classes/WelcomeScene.cpp | 88 +++++++++++++++++++++++++++++++
+ p3-animation/Air/Classes/WelcomeScene.h   | 13 +++++
+ 2 files changed, 101 insertions(+)
+
+commit e642b3a77e28f3d02b2eaabf07167b17ea7dba47
+Author: Wen Yang <wyang41@binghamton.edu>
+Date:   Tue Feb 26 15:25:09 2019 -0500
+
+    y
+
+ p3-animation/Air/Classes/AppDelegate.cpp | 2 ++
+ p3-animation/Air/Classes/commData.h      | 1 +
+ 2 files changed, 3 insertions(+)
+
+commit e791e96666a311ecee947ecfde2ee9e30ebbfeaa
+Author: Wen Yang <wyang41@binghamton.edu>
+Date:   Tue Feb 26 15:24:22 2019 -0500
+
+    y
+
+ p3-animation/Air/Classes/GameOverScene.cpp | 130 +++++++++++++++++++++++++++++
+ p3-animation/Air/Classes/GameOverScene.h   |  18 ++++
+ 2 files changed, 148 insertions(+)
+
+commit 7daa5fafc87b95034eeef839c0832d25325debef
+Author: Wen Yang <wyang41@binghamton.edu>
+Date:   Mon Feb 25 18:00:11 2019 -0500
+
+    111
+
+ p3-animation/Air/Classes/AppDelegate.cpp           |  55 ++
+ p3-animation/Air/Classes/AppDelegate.h             |  37 ++
+ p3-animation/Air/Classes/Bullet.cpp                |  61 ++
+ p3-animation/Air/Classes/Bullet.h                  |  13 +
+ p3-animation/Air/Classes/Enemy.cpp                 | 160 +++++
+ p3-animation/Air/Classes/Enemy.h                   |  25 +
+ p3-animation/Air/Classes/HelloWorldScene.cpp       | 105 +++
+ p3-animation/Air/Classes/HelloWorldScene.h         |  23 +
+ p3-animation/Air/Classes/Ufo.cpp                   |  41 ++
+ p3-animation/Air/Classes/Ufo.h                     |  12 +
+ p3-animation/Air/Classes/commData.h                |  32 +
+ p3-animation/Air/Classes/gamescene.cpp             | 718 +++++++++++++++++++++
+ p3-animation/Air/Classes/gamescene.h               |  26 +
+ p3-animation/Air/Resources/.DS_Store               | Bin 0 -> 10244 bytes
+ p3-animation/Air/Resources/CloseNormal.png         | Bin 0 -> 6311 bytes
+ p3-animation/Air/Resources/CloseSelected.png       | Bin 0 -> 5499 bytes
+ p3-animation/Air/Resources/HelloWorld.png          | Bin 0 -> 138777 bytes
+ p3-animation/Air/Resources/font/font.fnt           |  17 +
+ p3-animation/Air/Resources/font/font.png           | Bin 0 -> 5193 bytes
+ p3-animation/Air/Resources/fonts/Marker Felt.ttf   | Bin 0 -> 25776 bytes
+ p3-animation/Air/Resources/fps_images-hd.png       | Bin 0 -> 23443 bytes
+ p3-animation/Air/Resources/fps_images-ipadhd.png   | Bin 0 -> 23443 bytes
+ p3-animation/Air/Resources/fps_images.png          | Bin 0 -> 6953 bytes
+ p3-animation/Air/Resources/laser.png               | Bin 0 -> 54950 bytes
+ p3-animation/Air/Resources/sound/achievement.mp3   | Bin 0 -> 8831 bytes
+ p3-animation/Air/Resources/sound/bgm.wav           | Bin 0 -> 18699344 bytes
+ .../Air/Resources/sound/big_spaceship_flying.mp3   | Bin 0 -> 12327 bytes
+ p3-animation/Air/Resources/sound/bullet.mp3        | Bin 0 -> 7751 bytes
+ p3-animation/Air/Resources/sound/button.mp3        | Bin 0 -> 6815 bytes
+ p3-animation/Air/Resources/sound/enemy1_down.mp3   | Bin 0 -> 11287 bytes
+ p3-animation/Air/Resources/sound/enemy2_down.mp3   | Bin 0 -> 12847 bytes
+ p3-animation/Air/Resources/sound/enemy3_down.mp3   | Bin 0 -> 9415 bytes
+ p3-animation/Air/Resources/sound/game_music.mp3    | Bin 0 -> 117728 bytes
+ p3-animation/Air/Resources/sound/game_over.mp3     | Bin 0 -> 14615 bytes
+ p3-animation/Air/Resources/sound/get_bomb.mp3      | Bin 0 -> 9653 bytes
+ .../Air/Resources/sound/get_double_laser.mp3       | Bin 0 -> 13494 bytes
+ p3-animation/Air/Resources/sound/out_porp.mp3      | Bin 0 -> 10693 bytes
+ p3-animation/Air/Resources/sound/start.wav         | Bin 0 -> 7440152 bytes
+ p3-animation/Air/Resources/sound/use_bomb.mp3      | Bin 0 -> 10703 bytes
+ p3-animation/Air/Resources/start_menu.png          | Bin 0 -> 5667 bytes
+ p3-animation/Air/Resources/ui/background.plist     | 100 +++
+ p3-animation/Air/Resources/ui/background.png       | Bin 0 -> 1539963 bytes
+ p3-animation/Air/Resources/ui/daoju.plist          | 295 +++++++++
+ p3-animation/Air/Resources/ui/daoju.png            | Bin 0 -> 158334 bytes
+ p3-animation/Air/Resources/ui/juese.plist          | 191 ++++++
+ p3-animation/Air/Resources/ui/juese.png            | Bin 0 -> 289507 bytes
+ p3-animation/Air/Resources/ui/tanchu.plist         | 113 ++++
+ p3-animation/Air/Resources/ui/tanchu.png           | Bin 0 -> 15116 bytes
+ 48 files changed, 2024 insertions(+)
+
+commit a914218a9e20103a3507736689e34cb6ece3b678
+Author: Wen Yang <wyang41@binghamton.edu>
+Date:   Sun Feb 24 23:34:07 2019 -0500
+
+    keep going
+
+ p3-animation/Air/gamescene.cpp | 96 +++++++++++++++++++++++++++++++++++++++++-
+ p3-animation/Air/gamescene.h   | 11 ++++-
+ 2 files changed, 105 insertions(+), 2 deletions(-)
+
+commit e88e24745b4434b9edf27683bc518200e8abac3e
+Author: Wen Yang <wyang41@binghamton.edu>
+Date:   Sat Feb 23 22:40:49 2019 -0500
+
+    items added
+
+ p3-animation/Air/Bullet.cpp    |  61 ++++++++++++++++
+ p3-animation/Air/Bullet.h      |  13 ++++
+ p3-animation/Air/Enemy.cpp     | 160 +++++++++++++++++++++++++++++++++++++++++
+ p3-animation/Air/Enemy.h       |  25 +++++++
+ p3-animation/Air/commData.h    |  24 +++++++
+ p3-animation/Air/gamescene.cpp |  14 ++++
+ 6 files changed, 297 insertions(+)
+
+commit 60622485c91e6f96f83bab4ed26457bb92f08360
+Author: Wen Yang <wyang41@binghamton.edu>
+Date:   Fri Feb 22 23:10:23 2019 -0500
+
+    222
+
+ p3-animation/Air/HelloWorldScene.cpp | 105 +++++++++++++
+ p3-animation/Air/HelloWorldScene.h   |  23 +++
+ p3-animation/Air/gamescene.cpp       | 282 +++++++++++++++++++++++++++++++++++
+ p3-animation/Air/gamescene.h         |  17 +++
+ 4 files changed, 427 insertions(+)
+
+commit 9d5cd63328aefad595d30ed91e496476b054a95e
+Author: Wen Yang <wyang41@binghamton.edu>
+Date:   Thu Feb 21 23:42:56 2019 -0500
+
+    change to cocos2d game
+
+ p3-animation/Air/.DS_Store       | Bin 0 -> 6148 bytes
+ p3-animation/Air/AppDelegate.cpp |  55 +++++++++++++++++++++++++++++++++++++++
+ p3-animation/Air/AppDelegate.h   |  37 ++++++++++++++++++++++++++
+ 3 files changed, 92 insertions(+)
+
+commit ca25edd6406f593a6591e63fe968b73cec80b124
+Author: Wen Yang <wyang41@binghamton.edu>
+Date:   Wed Feb 20 22:01:18 2019 -0500
+
+    1
+
+ p3-animation/Animation/Animation/MenuLayer.m | 29 +++++++++++++++++++++++++++-
+ 1 file changed, 28 insertions(+), 1 deletion(-)
+
+commit 56fd5bee424df7ce49a5c4e5294b046d030448a5
+Author: Wen Yang <wyang41@binghamton.edu>
+Date:   Wed Feb 20 21:59:37 2019 -0500
+
+    1
+
+ p3-animation/Animation/Animation/Animation-Bridging-Header.h | 4 ++++
+ p3-animation/Animation/Animation/MenuLayer.m                 | 9 +++++++++
+ 2 files changed, 13 insertions(+)
+
+commit b49ece96b74da4d89bca27b20e6e76762a65143c
+Author: Wen Yang <wyang41@binghamton.edu>
+Date:   Tue Feb 19 21:05:43 2019 -0500
+
+    ref
+
+ p3-animation/ref/.DS_Store                         | Bin 0 -> 8196 bytes
+ p3-animation/ref/doodlejumpbyhtml5/doodlejump.css  | 115 ++++
+ p3-animation/ref/doodlejumpbyhtml5/doodlejump.html |  34 ++
+ p3-animation/ref/doodlejumpbyhtml5/doodlejump.js   | 632 +++++++++++++++++++++
+ 4 files changed, 781 insertions(+)
+
+commit 73e5cb6246f92f605a8a90b6f958fe58b75167a4
+Author: Wen Yang <wyang41@binghamton.edu>
+Date:   Sun Feb 17 21:03:27 2019 +0100
+
+    p3
+
+ .DS_Store                                          | Bin 8196 -> 10244 bytes
+ log.txt                                            |  91 ----
+ README.md => p1-hello-world-ios/README.md          |   0
+ p2-2048/.DS_Store                                  | Bin 0 -> 8196 bytes
+ p2-2048/2048/.DS_Store                             | Bin 0 -> 8196 bytes
+ p2-2048/2048/2048.xcodeproj/project.pbxproj        |  20 +-
+ .../UserInterfaceState.xcuserstate                 | Bin 5152 -> 24875 bytes
+ .../xcdebugger/Breakpoints_v2.xcbkptlist           |  23 +
+ p2-2048/README.md                                  |   3 +
+ p2-2048/log.txt                                    | 198 +++++++
+ p2-2048/thoughts                                   |  81 ---
+ .../Animation/Animation.xcodeproj/project.pbxproj  | 597 +++++++++++++++++++++
+ .../project.xcworkspace/contents.xcworkspacedata   |   7 +
+ .../xcshareddata/IDEWorkspaceChecks.plist          |   8 +
+ .../UserInterfaceState.xcuserstate                 | Bin 0 -> 5152 bytes
+ .../xcschemes/xcschememanagement.plist             |  14 +
+ p3-animation/Animation/Animation/Actions.sks       | Bin 0 -> 1892 bytes
+ p3-animation/Animation/Animation/AppDelegate.swift |  46 ++
+ .../AppIcon.appiconset/Contents.json               |  98 ++++
+ .../Animation/Assets.xcassets/Contents.json        |   6 +
+ .../Animation/Base.lproj/LaunchScreen.storyboard   |  25 +
+ .../Animation/Animation/Base.lproj/Main.storyboard |  24 +
+ p3-animation/Animation/Animation/GameScene.sks     | Bin 0 -> 4694 bytes
+ p3-animation/Animation/Animation/GameScene.swift   |  89 +++
+ .../Animation/Animation/GameViewController.swift   |  50 ++
+ p3-animation/Animation/Animation/Info.plist        |  47 ++
+ .../Animation/AnimationTests/AnimationTests.swift  |  34 ++
+ p3-animation/Animation/AnimationTests/Info.plist   |  22 +
+ .../AnimationUITests/AnimationUITests.swift        |  34 ++
+ p3-animation/Animation/AnimationUITests/Info.plist |  22 +
+ 30 files changed, 1361 insertions(+), 178 deletions(-)
