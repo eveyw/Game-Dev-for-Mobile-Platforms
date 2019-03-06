@@ -44,6 +44,24 @@ class ViewController: UIViewController {
     
     fileprivate var gameState = GameState.ready
     
+    @IBOutlet weak var clockLabel: UILabel!
+    @IBOutlet weak var startLabel: UILabel!
+    @IBOutlet weak var bestTimeLabel: UILabel!
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        setupPlayerView()
+        prepareGame()
+    }
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        // First touch to start the game
+        if gameState == .ready {
+            startGame()
+        }
+        
+    }
+    
     // 53
     override func viewDidLoad() {
         super.viewDidLoad()
