@@ -60,6 +60,14 @@ class ViewController: UIViewController {
             startGame()
         }
         
+        if let touchLocation = event?.allTouches?.first?.location(in: view) {
+            movePlayer(to: touchLocation)
+            // Move all enemies to the new position to trace the player
+            moveEnemies(to: touchLocation)
+        }
+    }
+    
+    func generateEnemy(timer: Timer) {
     }
     
     // 53
