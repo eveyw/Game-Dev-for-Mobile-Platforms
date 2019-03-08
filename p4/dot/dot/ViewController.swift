@@ -68,7 +68,56 @@ class ViewController: UIViewController {
     }
     
     func generateEnemy(timer: Timer) {
+        // Generate an enemy with random position
+        let screenEdge = ScreenEdge.init(rawValue: Int(arc4random_uniform(4)))
+        let screenBounds = UIScreen.main.bounds
+        var position: CGFloat = 0
+        
+        switch screenEdge! {
+        case .left, .right:
+            position = CGFloat(arc4random_uniform(UInt32(screenBounds.height)))
+        case .top, .bottom:
+            position = CGFloat(arc4random_uniform(UInt32(screenBounds.width)))
+        }
+        
+        // Add new enemy
+        let enemyView = UIView(frame: .zero)
+        enemyView.bounds.size = CGSize(width: radius, height: radius)
+        enemyView.backgroundColor = getRandomColor()
+        
+        switch screenEdge! {
+        case .left:
+            enemyView.center = CGPoint(x: 0, y: position)
+        case .right:
+            enemyView.center = CGPoint(x: screenBounds.width, y: position)
+        case .top:
+            enemyView.center = CGPoint(x: position, y: screenBounds.height)
+        case .bottom:
+            enemyView.center = CGPoint(x: position, y: 0)
+        }
+        
+        view.addSubview(enemyView)
+        
+        // Start animation
+        let duration = getEnemyDuration(enemyView: enemyView)
+        let enemyAnimator = UIViewPropertyAnimator(duration: duration,
+                                                   curve: .linear,
+                                                   animations: { [weak self] in
+                                                    if let strongSelf = self {
+                                                        enemyView.center = strongSelf.playerView.center
+                                                    }
+            }
+        )
+        enemyAnimator.startAnimation()
+        enemyAnimators.append(enemyAnimator)
+        enemyViews.append(enemyView)
     }
+    
+    func tick(sender: CADisplayLink) {
+        updateCountUpTimer(timestamp: sender.timestamp)
+        checkCollision()
+    }
+}
     
     // 53
     override func viewDidLoad() {
