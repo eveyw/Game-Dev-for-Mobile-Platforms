@@ -120,6 +120,25 @@ class ViewController: UIViewController {
 }
 
 fileprivate extension ViewController {
+    func setupPlayerView() {
+        playerView.bounds.size = CGSize(width: radius * 2, height: radius * 2)
+        playerView.layer.cornerRadius = radius
+        playerView.backgroundColor = #colorLiteral(red: 1, green: 0.5781051517, blue: 0, alpha: 1)
+        
+        view.addSubview(playerView)
+    }
+    
+    func startEnemyTimer() {
+        enemyTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(generateEnemy(timer:)), userInfo: nil, repeats: true)
+    }
+    
+    func stopEnemyTimer() {
+        guard let enemyTimer = enemyTimer,
+            enemyTimer.isValid else {
+                return
+        }
+        enemyTimer.invalidate()
+    }
 
 }
 
