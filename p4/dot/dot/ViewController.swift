@@ -118,13 +118,12 @@ class ViewController: UIViewController {
         checkCollision()
     }
 }
-    
-    // 53
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
-    }
 
+fileprivate extension ViewController {
 
 }
+
+
+
+
 
