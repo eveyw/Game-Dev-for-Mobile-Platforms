@@ -140,6 +140,80 @@ fileprivate extension ViewController {
         enemyTimer.invalidate()
     }
 
+    func startDisplayLink() {
+        displayLink = CADisplayLink(target: self, selector: #selector(tick(sender:)))
+        displayLink?.add(to: RunLoop.main, forMode: RunLoopMode.defaultRunLoopMode)
+    }
+    
+    func stopDisplayLink() {
+        displayLink?.isPaused = true
+        displayLink?.remove(from: RunLoop.main, forMode: RunLoopMode.defaultRunLoopMode)
+        displayLink = nil
+    }
+    
+    func getRandomColor() -> UIColor {
+        let index = arc4random_uniform(UInt32(colors.count))
+        return colors[Int(index)]
+    }
+    
+    func getEnemyDuration(enemyView: UIView) -> TimeInterval {
+        let dx = playerView.center.x - enemyView.center.x
+        let dy = playerView.center.y - enemyView.center.y
+        return TimeInterval(sqrt(dx * dx + dy * dy) / enemySpeed)
+    }
+    
+    func gameOver() {
+        stopGame()
+        displayGameOverAlert()
+    }
+    
+    func stopGame() {
+        stopEnemyTimer()
+        stopDisplayLink()
+        stopAnimators()
+        gameState = .gameOver
+    }
+    
+    func prepareGame() {
+        getBestTime()
+        removeEnemies()
+        centerPlayerView()
+        popPlayerView()
+        startLabel.isHidden = false
+        clockLabel.text = "00:00.000"
+        gameState = .ready
+    }
+    
+    func startGame() {
+        startEnemyTimer()
+        startDisplayLink()
+        startLabel.isHidden = true
+        beginTimestamp = 0
+        gameState = .playing
+    }
+    
+    func removeEnemies() {
+        enemyViews.forEach {
+            $0.removeFromSuperview()
+        }
+        enemyViews = []
+    }
+    
+    func stopAnimators() {
+        playerAnimator?.stopAnimation(true)
+        playerAnimator = nil
+        enemyAnimators.forEach {
+            $0.stopAnimation(true)
+        }
+        enemyAnimators = []
+    }
+    
+    //  func updateCountUpTimer()
+    
+    //  func movePlayer()
+    
+    //  func moveEnemies()
+
 }
 
 
