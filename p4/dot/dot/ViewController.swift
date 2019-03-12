@@ -208,12 +208,54 @@ fileprivate extension ViewController {
         enemyAnimators = []
     }
     
-    //  func updateCountUpTimer()
+    func updateCountUpTimer(timestamp: TimeInterval) {
+        if beginTimestamp == 0 {
+            beginTimestamp = timestamp
+        }
+        elapsedTime = timestamp - beginTimestamp
+        clockLabel.text = format(timeInterval: elapsedTime)
+    }
     
-    //  func movePlayer()
+    func format(timeInterval: TimeInterval) -> String {
+        let interval = Int(timeInterval)
+        let seconds = interval % 60
+        let minutes = (interval / 60) % 60
+        let milliseconds = Int(timeInterval * 1000) % 1000
+        return String(format: "%02d:%02d.%03d", minutes, seconds, milliseconds)
+    }
     
-    //  func moveEnemies()
-
+    func checkCollision() {
+        enemyViews.forEach {
+            guard let playerFrame = playerView.layer.presentation()?.frame,
+                let enemyFrame = $0.layer.presentation()?.frame,
+                playerFrame.intersects(enemyFrame) else {
+                    return
+            }
+            gameOver()
+        }
+    }
+    
+    func movePlayer(to touchLocation: CGPoint) {
+        playerAnimator = UIViewPropertyAnimator(duration: playerAnimationDuration,
+                                                dampingRatio: 0.5,
+                                                animations: { [weak self] in
+                                                    self?.playerView.center = touchLocation
+        })
+        playerAnimator?.startAnimation()
+    }
+    
+    func moveEnemies(to touchLocation: CGPoint) {
+        for (index, enemyView) in enemyViews.enumerated() {
+            let duration = getEnemyDuration(enemyView: enemyView)
+            enemyAnimators[index] = UIViewPropertyAnimator(duration: duration,
+                                                           curve: .linear,
+                                                           animations: {
+                                                            enemyView.center = touchLocation
+            })
+            enemyAnimators[index].startAnimation()
+        }
+    }
+    
 }
 
 
