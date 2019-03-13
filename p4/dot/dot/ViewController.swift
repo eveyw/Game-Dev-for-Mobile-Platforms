@@ -257,16 +257,13 @@ fileprivate extension ViewController {
     }
     
     func displayGameOverAlert() {
-        let (title, message) = getGameOverTitleAndMessage()
-        let alert = UIAlertController(title: "Game Over", message: message, preferredStyle: .alert)
-        let action = UIAlertAction(title: title, style: .default,
+        let action = UIAlertAction(title: "Game Over", style: .default,
                                    handler: { _ in
-                                    self.prepareGame()
-        }
+                                    self.prepareGame()}
         )
-        alert.addAction(action)
-        self.present(alert, animated: true, completion: nil)
     }
+    
+
     
     func centerPlayerView() {
         playerView.center = view.center
