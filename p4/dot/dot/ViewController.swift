@@ -256,6 +256,49 @@ fileprivate extension ViewController {
         }
     }
     
+    func displayGameOverAlert() {
+        let (title, message) = getGameOverTitleAndMessage()
+        let alert = UIAlertController(title: "Game Over", message: message, preferredStyle: .alert)
+        let action = UIAlertAction(title: title, style: .default,
+                                   handler: { _ in
+                                    self.prepareGame()
+        }
+        )
+        alert.addAction(action)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func centerPlayerView() {
+        playerView.center = view.center
+    }
+    
+    // Copy from IBAnimatable
+    func popPlayerView() {
+        let animation = CAKeyframeAnimation(keyPath: "transform.scale")
+        animation.values = [0, 0.2, -0.2, 0.2, 0]
+        animation.keyTimes = [0, 0.2, 0.4, 0.6, 0.8, 1]
+        animation.timingFunction = CAMediaTimingFunction(name: kCAMediaTimingFunctionEaseInEaseOut)
+        animation.duration = CFTimeInterval(0.7)
+        animation.isAdditive = true
+        animation.repeatCount = 1
+        animation.beginTime = CACurrentMediaTime()
+        playerView.layer.add(animation, forKey: "pop")
+    }
+    
+    func setBestTime(with time:String){
+        let defaults = UserDefaults.standard
+        defaults.set(time, forKey: "bestTime")
+        
+    }
+    
+    func getBestTime(){
+        let defaults = UserDefaults.standard
+        
+        if let time = defaults.value(forKey: "bestTime") as? String {
+            self.bestTimeLabel.text = "Best Time: \(time)"
+        }
+    }
+    
 }
 
 
