@@ -1,0 +1,2 @@
+Birth Weight Loss app
+app to calculate weight loss from newborn birth weight and subsequent weight in whatever units user wants (pounds, pounds-n-ounces, kg's) and output % weight loss and what the 10% threshold would be in whatever units the user wants
