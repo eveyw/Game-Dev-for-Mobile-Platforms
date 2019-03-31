@@ -90,6 +90,49 @@ class Document: UIDocument {
         
         alignmentOption = AlignmentOptions.Left
     }
+    
+    /**
+     This is an extremely complicated method that concatenates the first and last name and produces the full name.
+     
+     - Parameter firstname: The first part of the full name.
+     - Parameter lastname: The last part of the fullname.
+     */
+    func createFullName(firstname: String, lastname: String) {
+        let fullname = "\(firstname) \(lastname)"
+        print(fullname)
+    }
+
+
+    /**
+     This is an extremely complicated method that concatenates the first and last name and produces the full name.
+     
+     - Parameter firstname: The first part of the full name.
+     - Parameter lastname: The last part of the fullname.
+     - Returns: The full name as a string value.
+     */
+    func createFullName(firstname: String, lastname: String) -> String {
+        return "\(firstname) \(lastname)"
+    }
+    
+
+    /**
+     Another complicated function.
+     
+     - Parameter fullname: The fullname that will be broken into its parts.
+     - Returns: A *tuple* with the first and last name.
+     
+     - Remark:
+     There's a counterpart function that concatenates the first and last name into a full name.
+     
+     - SeeAlso:  `createFullName(_:lastname:)`
+     
+     */
+    func breakFullName(fullname: String) -> (firstname: String, lastname: String) {
+        let fullnameInPieces = fullname.componentsSeparatedByString(" ")
+        return (fullnameInPieces[0], fullnameInPieces[1])
+    }
+    
+    
     override func load(fromContents contents: Any, ofType typeName: String?) throws {
         // Load your document from contents
     }
