@@ -16,6 +16,8 @@
 		DB000EF72249CFF8006D127C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DB000EF52249CFF8006D127C /* LaunchScreen.storyboard */; };
 		DB000F022249CFF8006D127C /* p5_teamTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB000F012249CFF8006D127C /* p5_teamTests.swift */; };
 		DB000F0D2249CFF8006D127C /* p5_teamUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB000F0C2249CFF8006D127C /* p5_teamUITests.swift */; };
+		DB25F6B32252C3B300E5D41F /* FileM.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB25F6B22252C3B300E5D41F /* FileM.swift */; };
+		DBB1B0542253EF6E00326F01 /* JSONDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB1B0532253EF6E00326F01 /* JSONDocument.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +53,8 @@
 		DB000F082249CFF8006D127C /* p5-teamUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "p5-teamUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DB000F0C2249CFF8006D127C /* p5_teamUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = p5_teamUITests.swift; sourceTree = "<group>"; };
 		DB000F0E2249CFF8006D127C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DB25F6B22252C3B300E5D41F /* FileM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileM.swift; sourceTree = "<group>"; };
+		DBB1B0532253EF6E00326F01 /* JSONDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDocument.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,7 +112,9 @@
 				DB000EF02249CFF7006D127C /* Main.storyboard */,
 				DB000EF32249CFF8006D127C /* Assets.xcassets */,
 				DB000EF52249CFF8006D127C /* LaunchScreen.storyboard */,
+				DB25F6B22252C3B300E5D41F /* FileM.swift */,
 				DB000EF82249CFF8006D127C /* Info.plist */,
+				DBB1B0532253EF6E00326F01 /* JSONDocument.swift */,
 			);
 			path = "p5-team";
 			sourceTree = "<group>";
@@ -262,7 +268,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB25F6B32252C3B300E5D41F /* FileM.swift in Sources */,
 				DB000EEF2249CFF7006D127C /* Document.swift in Sources */,
+				DBB1B0542253EF6E00326F01 /* JSONDocument.swift in Sources */,
 				DB000EED2249CFF7006D127C /* DocumentViewController.swift in Sources */,
 				DB000EEB2249CFF7006D127C /* DocumentBrowserViewController.swift in Sources */,
 				DB000EE92249CFF7006D127C /* AppDelegate.swift in Sources */,
