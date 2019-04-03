@@ -53,4 +53,49 @@ open class JSONAPIDocument: JSONPrinter {
         }
         
 }
+
+    public convenience init(_ data: Data) throws {
+        let json = try JSONSerialization.jsonObject(with: data, options: JSONSerialization.ReadingOptions.allowFragments)
+        self.init(json as! [String:Any])
+    }
     
+    open func toDict() -> [String:Any] {
+        var dict: [String:Any] = [:]
+        dict["data"] = data.count == 1 ? data.first!.toDict() : data.map { $0.toDict() }
+        
+        switch included.count {
+        case 1:
+            dict["included"] = included.first!.toDict() as Any?
+        case let x where x > 1:
+            dict["included"] = included.map { $0.toDict() }
+        default: break
+        }
+        
+        return dict
+    }
+    
+    public func loadIncludedResources() {
+        let includedResources = included.reduce(into: ResourcesByTypeAndId()) { (result, resource) in
+            result[resource] = resource
+        }
+        
+        data.forEach { $0.loadResources(withIncludedResources: includedResources) }
+    }
+}
+
+
+extension Dictionary where Key == String, Value == ResourcesById {
+    
+    subscript(key: JSONAPIResource) -> JSONAPIResource? {
+        get { return self[key.type]?[key.id] }
+        set {
+            if var resources = self[key.type] {
+                resources[key.id] = newValue
+                self[key.type] = resources
+            } else if let resource = newValue {
+                self[key.type] = [resource.id : resource]
+            }
+        }
+    }
+}
+
