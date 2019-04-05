@@ -39,6 +39,26 @@ class calculator
     }
     
         func performoperation(symbol: String) {
+            internalProgram.append(symbol as AnyObject)
+            if let operation = operations[symbol] {
+                switch operation {
+                case .Constant(let value):
+                    accumulator = value
+                case .UnaryOperation(let function):
+                    accumulator = function(accumulator)
+                case .BinaryOperation(let function):
+                    executePendingBinaryOperation()
+                    pending = PendingBinaryOperationInfo(binaryFunction: function, firstOperand: accumulator)
+                case .Equals:
+                    executePendingBinaryOperation()
+                }
+            }
+    }
+    
+    var result: Double {
+        get {
+            return accumulator
+        }
     }
     
 }

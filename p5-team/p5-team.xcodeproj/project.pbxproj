@@ -18,6 +18,7 @@
 		DB000F0D2249CFF8006D127C /* p5_teamUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB000F0C2249CFF8006D127C /* p5_teamUITests.swift */; };
 		DB25F6B32252C3B300E5D41F /* FileM.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB25F6B22252C3B300E5D41F /* FileM.swift */; };
 		DBB1B0542253EF6E00326F01 /* JSONDocument.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBB1B0532253EF6E00326F01 /* JSONDocument.swift */; };
+		DBE1C42A2256A2C200C2C67F /* caculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBE1C4292256A2C200C2C67F /* caculator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		DB000F0E2249CFF8006D127C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		DB25F6B22252C3B300E5D41F /* FileM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileM.swift; sourceTree = "<group>"; };
 		DBB1B0532253EF6E00326F01 /* JSONDocument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JSONDocument.swift; sourceTree = "<group>"; };
+		DBE1C4292256A2C200C2C67F /* caculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = caculator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				DB25F6B22252C3B300E5D41F /* FileM.swift */,
 				DB000EF82249CFF8006D127C /* Info.plist */,
 				DBB1B0532253EF6E00326F01 /* JSONDocument.swift */,
+				DBE1C4292256A2C200C2C67F /* caculator.swift */,
 			);
 			path = "p5-team";
 			sourceTree = "<group>";
@@ -272,6 +275,7 @@
 				DB000EEF2249CFF7006D127C /* Document.swift in Sources */,
 				DBB1B0542253EF6E00326F01 /* JSONDocument.swift in Sources */,
 				DB000EED2249CFF7006D127C /* DocumentViewController.swift in Sources */,
+				DBE1C42A2256A2C200C2C67F /* caculator.swift in Sources */,
 				DB000EEB2249CFF7006D127C /* DocumentBrowserViewController.swift in Sources */,
 				DB000EE92249CFF7006D127C /* AppDelegate.swift in Sources */,
 			);
