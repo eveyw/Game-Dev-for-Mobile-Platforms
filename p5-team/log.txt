@@ -1,0 +1,125 @@
+commit 36c6401fbce66000853bb45db50e8f2191bf301d
+Author: Wen Yang <wyang41@binghamton.edu>
+Date:   Fri Apr 5 02:40:48 2019 -0400
+
+    1
+
+ p5-team/p5-team.xcodeproj/project.pbxproj           |   4 ++++
+ .../UserInterfaceState.xcuserstate                  | Bin 20775 -> 21326 bytes
+ p5-team/p5-team/caculator.swift                     |  20 ++++++++++++++++++++
+ 3 files changed, 24 insertions(+)
+
+commit 924cae6cbb2d7276d05d65a414d4b82875f37827
+Author: Wen Yang <wyang41@binghamton.edu>
+Date:   Thu Apr 4 18:04:36 2019 -0400
+
+    module
+
+ p5-team/p5-team/caculator.swift | 30 ++++++++++++++++++++++++++++++
+ 1 file changed, 30 insertions(+)
+
+commit 5baa29c031433857a4db78da427d3e6c230bb861
+Author: Wen Yang <wyang41@binghamton.edu>
+Date:   Thu Apr 4 16:39:18 2019 -0400
+
+    module
+
+ p5-team/p5-team/caculator.swift | 14 ++++++++++++++
+ 1 file changed, 14 insertions(+)
+
+commit 09dae6d9ce5addbb24991dafa64957ca52a0e76a
+Author: Wen Yang <wyang41@binghamton.edu>
+Date:   Wed Apr 3 10:02:24 2019 -0400
+
+    1
+
+ .../UserInterfaceState.xcuserstate                 | Bin 20654 -> 20775 bytes
+ p5-team/p5-team/JSONDocument.swift                 |  45 +++++++++++++++++++++
+ 2 files changed, 45 insertions(+)
+
+commit 5ee44211dd8871f34a97a911b0f903973aafb6f0
+Author: Wen Yang <wyang41@binghamton.edu>
+Date:   Tue Apr 2 15:30:13 2019 -0400
+
+    api
+
+ p5-team/p5-team.xcodeproj/project.pbxproj          |   8 +++
+ .../UserInterfaceState.xcuserstate                 | Bin 19441 -> 20654 bytes
+ p5-team/p5-team/JSONDocument.swift                 |  56 +++++++++++++++++++++
+ 3 files changed, 64 insertions(+)
+
+commit f4fa6b9cd14d9b382b1589d098b960839a58a010
+Author: Wen Yang <wyang41@binghamton.edu>
+Date:   Mon Apr 1 18:10:39 2019 -0400
+
+    1
+
+ p5-team/p5-team/FileM.swift | 44 ++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 44 insertions(+)
+
+commit 82948cd4c6cbc64fa2f3a2fd2638088c5f748336
+Author: Wen Yang <wyang41@binghamton.edu>
+Date:   Sun Mar 31 01:18:24 2019 -0400
+
+    1
+
+ .../UserInterfaceState.xcuserstate                 | Bin 19595 -> 19441 bytes
+ p5-team/p5-team/Document.swift                     |  43 +++++++++++++++++++++
+ 2 files changed, 43 insertions(+)
+
+commit 3ce538e780615dfabcec91d032b56ef06416dbdf
+Author: Wen Yang <wyang41@binghamton.edu>
+Date:   Fri Mar 29 22:55:18 2019 -0400
+
+    1
+
+ p5-team/p5-team/Document.swift | 75 ++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 75 insertions(+)
+
+commit 98fd06c17c418c307178d9da409c3d137b79b61a
+Author: Wen Yang <wyang41@binghamton.edu>
+Date:   Thu Mar 28 17:24:39 2019 -0400
+
+    1
+
+ .../UserInterfaceState.xcuserstate                 | Bin 5154 -> 19595 bytes
+ p5-team/p5-team/Base.lproj/Main.storyboard         |  31 +++++++++++++++------
+ 2 files changed, 23 insertions(+), 8 deletions(-)
+
+commit 1338b48a5ec9ef71cecced126c1fded96942bcd8
+Author: Wen Yang <wyang41@binghamton.edu>
+Date:   Wed Mar 27 22:26:18 2019 -0400
+
+    idea
+
+ p5-team/idea/idea.txt | 2 ++
+ 1 file changed, 2 insertions(+)
+
+commit b4a414ba50ebe7293306c81ca580650aeaf5f0e8
+Author: Wen Yang <wyang41@binghamton.edu>
+Date:   Mon Mar 25 23:12:24 2019 -0400
+
+    p5
+
+ p4/README.md                                       |   5 +
+ p4/log.txt                                         | 440 +--------------
+ p5-team/p5-team.xcodeproj/project.pbxproj          | 593 +++++++++++++++++++++
+ .../project.xcworkspace/contents.xcworkspacedata   |   7 +
+ .../xcshareddata/IDEWorkspaceChecks.plist          |   8 +
+ .../UserInterfaceState.xcuserstate                 | Bin 0 -> 5154 bytes
+ .../xcschemes/xcschememanagement.plist             |  14 +
+ p5-team/p5-team/AppDelegate.swift                  |  67 +++
+ .../AppIcon.appiconset/Contents.json               |  98 ++++
+ p5-team/p5-team/Assets.xcassets/Contents.json      |   6 +
+ p5-team/p5-team/Base.lproj/LaunchScreen.storyboard |  25 +
+ p5-team/p5-team/Base.lproj/Main.storyboard         |  82 +++
+ p5-team/p5-team/Document.swift                     |  22 +
+ .../p5-team/DocumentBrowserViewController.swift    |  74 +++
+ p5-team/p5-team/DocumentViewController.swift       |  36 ++
+ p5-team/p5-team/Info.plist                         |  68 +++
+ p5-team/p5-teamTests/Info.plist                    |  22 +
+ p5-team/p5-teamTests/p5_teamTests.swift            |  34 ++
+ p5-team/p5-teamUITests/Info.plist                  |  22 +
+ p5-team/p5-teamUITests/p5_teamUITests.swift        |  34 ++
+ 20 files changed, 1228 insertions(+), 429 deletions(-)
+
