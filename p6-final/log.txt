@@ -1,3 +1,13 @@
+commit 38ac32dc04648fc5997fc0626d1cfd557f4a49ca
+Author: Wen Yang <wyang41@binghamton.edu>
+Date:   Fri Apr 26 03:05:36 2019 -0400
+
+    finish
+
+ README.md            |  6 +++++-
+ VariableManager.java | 51 ++++++++++++++++++++++++++++++++++++++++++++++++++-
+ 2 files changed, 55 insertions(+), 2 deletions(-)
+
 commit 888a35e8a5daa80a35a9538c9d614916c75451b4
 Author: Wen Yang <wyang41@binghamton.edu>
 Date:   Thu Apr 25 19:59:14 2019 -0400
@@ -80,6 +90,7 @@ Date:   Sat Apr 20 10:41:57 2019 -0400
 
  README.md | 1 +
  1 file changed, 1 insertion(+)
+
 
 commit ebd2e8ffc664ddc77ae81f104fc72d4229be815f
 Author: Wen Yang <wyang41@binghamton.edu>
@@ -2207,4 +2218,3 @@ Date:   Mon Apr 8 12:10:35 2019 -0400
  p6-WebBackEnd/p6-WebBackEndUITests/Info.plist      |  22 +
  .../p6_WebBackEndUITests.swift                     |  34 ++
  20 files changed, 1238 insertions(+)
-
