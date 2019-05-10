@@ -59,3 +59,22 @@
 			}
 
 		})
+
+
+
+
+Spirit.interface( 'Animate', Interfaces.Animate );
+
+Spirit.interface( 'SpiritFrames', Interfaces.SpiritFrames );
+		
+Spirit.interface( 'Shadow', Interfaces.Shadow );
+
+Spirit.interface( 'Queue', Interfaces.Queue );
+
+Spirit.interface( 'Lock', Interfaces.Lock );
+		
+Spirit.interface( 'KeyManage', Interfaces.KeyManage );
+		
+Spirit.interface( 'Collision', Interfaces.Collision );
+		
+Spirit.interface( 'StatusManage', Interfaces.StatusManage );
