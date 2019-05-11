@@ -489,6 +489,239 @@ Spirit.interface( 'StatusManage', Interfaces.StatusManage );
 
 
 
+	var Fighter = Class.create( function( master ){
+		this.width = 50;
+		this.height = 50;
+		this.left = 0;
+		this.top = 0;
+		this.master = master;
+		this.timer = null;
+		this.animate = null;
+		this.attackEffect = null;
+		this.effect_position = null;
+		this.sound = null;
+		this.easing = null;
+	},
+
+	{
+		init: function(){
+			var self = this;
+			this.animate = this.implement( 'Animate' );
+			this.collision = this.implement( 'Collision' );
+			this.attackEffect = this.implement( 'AttackEffect' );
+			this.audio = this.implement( 'Audio' );
+
+			this.animate.event.listen( 'framesDone', function(){				
+				self.stop();
+			})
+		
+		
+			this.master.enemy.bloodBar.event.listen( 'empty', function(){
+				setTimeout( function(){
+					Game.reload();
+				}, 3000 );
+				self.master.keyManage.stop();
+				if ( self.master.enemy.statusManage.isJump() ){
+					return self.master.enemy.play( 'jump_dead' );	
+				}
+				self.master.enemy.play( 'dead' );
+			})
+
+
+			var framefn = function(){
+				if ( self.animate_type === 'stick' ){
+					if ( self.master.direction === 1 ){
+						self.left = self.master.left + self.easing[0];
+					}else{
+						self.left = self.master.left + self.master.width - self.easing[0] + self.width;
+					}
+					self.top = self.master.top + self.easing[1];
+				}else{
+					self.animate.move();
+				}
+						
+				self.collision.check();
+
+			}
+
+			this.timer = Timer.add( framefn );
+
+			this.collision.event.listen( 'affirm',  function( obj, dir ){
+
+				if ( obj === this.master.enemy ){
+				
+					if ( this.master.statusManage.isStand() && this.master.enemy.statusManage.isCrouch() && this.master.state.indexOf( 'near' ) < 0 ){
+						return this.stop();	
+					}
+
+					var enemy_attack_type = this.master.enemy.statusManage.get().attack_type;
+
+					var enemy_invincible = this.master.enemy.statusManage.get().invincible;
+
+					if ( enemy_attack_type === 'fall_down' || enemy_invincible ){
+						return this.stop();
+					}
+								
+					if ( enemy_attack_type === 'defense' ){
+						return this.enemyDefense();
+					}
+				
+					var attack_power = this.master.statusManage.get().attack_power;
+
+					var enemy_attack_power = this.master.enemy.statusManage.get().attack_power;
+					
+				
+					if ( attack_power < enemy_attack_power ){
+						this.master.enemy.attack.stop();
+						this.master.enemy.attack.enemyBeat();
+						return this.stop();
+					}
+
+					if ( attack_power > 0 && attack_power === enemy_attack_power ){
+						this.master.enemy.attack.enemyBeat();
+					}
+
+
+					this.enemyBeat();	
+
+							
+				}
+
+			})
+			
+			
+			return this;
+
+		},
+
+
+		enemyDefense: function(){
+
+			if ( this.master.statusManage.isCrouch() && this.master.enemy.statusManage.isStand() ){
+				return this.enemyBeat();
+			}
+			
+			this.attackEffect.start( 'defense', this.master.direction === 1 ? this.master.enemy.left + this.effect_position[ 0 ] : this.master.enemy.left + this.master.enemy.width + this.effect_position[ 0 ] , this.master.enemy.top + this.effect_position[ 1 ] );
+
+			var attack_light = this.master.statusManage.get().attack_light;
+
+			var spirit = this.master.enemy.border && !this.master.statusManage.isJump() ? this.master : this.master.enemy;
+
+			spirit.animate.start( ( attack_light ? -20 : -70 ) * spirit.direction, 0, 200, 'linear' );
+
+			var defenseBlood = this.master.states[ this.master.state ].defenseBlood;
+			
+			if ( defenseBlood ){
+				this.master.enemy.bloodBar.reduce( defenseBlood || 5 );
+			}
+			
+			this.master.enemy.attack.playAudio( 'sound/defense.mp3' );
+
+		},
+
+		enemyBeat: function(){
+
+				if ( this.master.state === 'jump_whirl_kick' || this.master.state === 'jump_light_whirl_kick' ){
+					if ( this.master.enemy.statusManage.isCrouch() ){
+						return;
+					}
+				}
+
+				this.attackEffect.start( this.easing[ 4 ], this.master.direction === 1 ? this.master.enemy.left + this.effect_position[ 0 ] : this.master.enemy.left + this.master.enemy.width + this.effect_position[ 0 ] , this.master.enemy.top + this.effect_position[ 1 ] );
+
+				var attack_light = this.master.statusManage.get().attack_light;
+
+				if ( !this.master.statusManage.isCrouch() && this.master.enemy.statusManage.isJump() && this.master.state !== 'jump_whirl_kick' && this.master.state !== 'jump_light_whirl_kick' && this.master.state !== 'jump_heavy_impact_boxing' && this.master.state !== 'jump_light_impact_boxing' ){
+					this.master.enemy.play( 'jump_fall_down' );
+				}
+
+				else{
+					this.master.enemy.play( this.easing[ 5 ], true );
+				}
+
+
+				if ( this.master.enemy.border && !this.master.statusManage.isJump() ){
+					this.master.animate.start( ( attack_light ? -70 : -150 ) * this.master.direction, 0, 300, 'linear' );		
+				}
+
+				this.master.enemy.bloodBar.reduce( this.easing[ 6 ] || 50 );
+				
+				this.master.enemy.waveBoxing.ready_firing = false;
+				
+				this.playAudio( null, 1 );
+
+				//this.master.enemy.attack.stop();
+
+				this.stop();
+
+		},
+
+		start: function( left, top, easing, effect_position, sound ){
+			if ( this.master.direction === 1 ){
+				this.left = this.master.left + left;
+			}else{
+				this.left = this.master.left + this.master.width * 2 - left - this.width * 2;
+			}
+			this.top = this.master.top + top;
+			this.effect_position = effect_position;
+			this.animate.start( easing[0], easing[1], easing[2], easing[3] );
+			this.easing = easing;
+			this.sound = sound;
+			this.timer.start();
+		},
+
+		stickStart: function( easing, effect_position, sound ){
+			var self = this;
+			this.easing = easing;
+			this.effect_position = effect_position;
+			this.sound = sound;
+			this.width = this.height = easing[ 2 ];
+			this.animate_type = 'stick';
+			this.timer.start();
+			this.playAudio( this.sound[ 0 ] )
+		},
+
+		stop: function(){
+			this.animate_type = 'normal';
+			this.timer.stop();
+			this.master.statusManage.set_attack_power( [ 0, false ] );  //����֮��ȡ���޵�״̬
+			this.playAudio( null, 0 );
+		},
+
+		playAudio: function( src, type ){
+
+			if ( src ){
+				return this.audio.play( src );
+			}
+
+			if ( !this.sound ) return;
+
+			if ( type === 1 ){
+				return this.master.enemy.attack.audio.play( this.sound[ 1 ] );	
+			}else if ( type === 0 ){
+				if ( this.master.statusManage.isJump() ) return;
+				var enemy_attack_type = this.master.enemy.statusManage.get().attack_type;	
+				if ( enemy_attack_type !== 'beat' &&  enemy_attack_type !== 'fall_down' && this.master.statusManage.get().attack_type === 'attack' ){
+					return this.audio.play( this.sound[ 0 ] );	
+				}	
+			}
+
+
+		},
+
+		crossBorder: function( left ){
+			var maxX =  Map.getMaxX();
+			if ( left < 15 || left > maxX - this.width - 20 ){
+				this.stop();
+			}
+			return left;
+		}
+
+
+	}
+
+)
+
 Fighter.interface( 'Animate', Interfaces.Animate );
 
 Fighter.interface( 'Collision', Interfaces.Collision );
