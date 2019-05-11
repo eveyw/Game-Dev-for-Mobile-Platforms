@@ -486,3 +486,92 @@ Spirit.interface( 'KeyManage', Interfaces.KeyManage );
 Spirit.interface( 'Collision', Interfaces.Collision );
 		
 Spirit.interface( 'StatusManage', Interfaces.StatusManage );
+
+
+
+Fighter.interface( 'Animate', Interfaces.Animate );
+
+Fighter.interface( 'Collision', Interfaces.Collision );
+
+Fighter.interface( 'AttackEffect', Interfaces.AttackEffect );
+
+Fighter.interface( 'Audio', Interfaces.Audio );
+
+
+
+
+var WaveBoxing = Fighter.subClass( function( master ){
+
+	this.width = 56;
+	this.height = 32;
+	this.direction = 1;
+	this.master = master;
+	this.easing = null;
+	this.firing = false;
+	this.ready_firing = false;
+	this.timer = null;
+	
+	}, {
+				init: function(){
+					var self = this;
+					this.frames = this.implement( 'SpiritFrames' );
+					this.animate = this.implement( 'Animate' );
+					this.collision = this.implement( 'Collision', 48, 32 );
+					this.attackEffect = this.implement( 'AttackEffect', this );
+
+					this.frames.event.listen( 'frameStart', function(){
+
+						self.animate.move();
+
+						self.firing && self.collision.check();
+		
+					})
+
+
+					this.collision.event.listen( 'affirm',  function( obj, dir ){
+
+						if ( obj === self.master.enemy.waveBoxing && self.firing && self.master.enemy.waveBoxing.firing ){
+							self.stop();
+							self.master.enemy.waveBoxing.stop();
+							self.master.enemy.waveBoxing.attackEffect.start( self.easing[ 4 ], self.master.enemy.waveBoxing.direction === 1 ? self.left - self.width : self.left + self.width , self.top );
+							return self.attackEffect.start( self.easing[ 4 ], self.left, self.top );
+						}
+
+						if ( obj === self.master.enemy ){
+
+							if ( Math.abs( this.top - this.master.enemy.top ) > 130 ) return;  //��Ծ��ʱ�򽵵���ײ����
+
+							var enemy_invincible = this.master.enemy.statusManage.get().invincible;
+
+							if ( enemy_invincible ){
+								return;
+							}
+
+							var enemy_attack_type = this.master.enemy.statusManage.get().attack_type;
+
+							if ( enemy_attack_type === 'defense' ){
+								setTimeout(function(){
+									self.stop();
+								}, 0)
+								return self.enemyDefense();
+							}
+
+							setTimeout(function(){
+								self.stop();
+							}, 0)
+
+							this.enemyBeat();
+
+						}
+						
+
+	
+					})
+
+					this.frames.event.listen( 'framesDone', function(){
+						self.frames.loop();
+						self.animate.loop();
+					})
+
+					return this;
+				},
