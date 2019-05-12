@@ -1,0 +1,171 @@
+commit 94a6c7e2e27c99c833dd61055118ddc8e75b1a32
+Author: Wen Yang <wyang41@binghamton.edu>
+Date:   Sun May 12 01:00:47 2019 -0400
+
+    1
+
+ Big-Boss/WebVersion/main.js | 104 +++++++++++++++++++++++++++++++++++++++++++-
+ 1 file changed, 103 insertions(+), 1 deletion(-)
+
+commit 17367fe008bbcd68d65110c3b14167de9aa9c043
+Author: Wen Yang <wyang41@binghamton.edu>
+Date:   Sat May 11 15:16:49 2019 -0400
+
+    1
+
+ Big-Boss/WebVersion/main.js | 233 ++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 233 insertions(+)
+
+commit e992b69be54ddec4a7df58b4beba7aa5bd1ca5f2
+Author: Wen Yang <wyang41@binghamton.edu>
+Date:   Sat May 11 02:48:08 2019 -0400
+
+    privacy,rm config file
+
+ Big-Boss/WebVersion/config.js | 21 ---------------------
+ 1 file changed, 21 deletions(-)
+
+commit 00f7d764e1324027381bc5d61384da2f27ea360d
+Author: Wen Yang <wyang41@binghamton.edu>
+Date:   Sat May 11 02:47:10 2019 -0400
+
+    1
+
+ Big-Boss/WebVersion/game.js | 334 ++++++++++++++++++++++++++++++++++++++++++++
+ Big-Boss/WebVersion/main.js |  91 +++++++++++-
+ 2 files changed, 424 insertions(+), 1 deletion(-)
+
+commit 927de7bd51a6ca96e3aca5ba68702fdfb9569ce2
+Author: Wen Yang <wyang41@binghamton.edu>
+Date:   Fri May 10 01:10:55 2019 -0400
+
+    1
+
+ Big-Boss/WebVersion/main.js | 408 ++++++++++++++++++++++++++++++++++++++++++++
+ Big-Boss/WebVersion/util.js |  74 +++++++-
+ 2 files changed, 477 insertions(+), 5 deletions(-)
+
+commit 5b027c5cea7137d7ed11d98e34016f2aef4ce99c
+Author: Wen Yang <wyang41@binghamton.edu>
+Date:   Fri May 10 01:08:15 2019 -0400
+
+    spirit
+
+ Big-Boss/WebVersion/main.js | 21 ++++++++++++++++++++-
+ 1 file changed, 20 insertions(+), 1 deletion(-)
+
+commit a46dd8f889fe84b7bac151200db0931304c96ecc
+Author: Wen Yang <wyang41@binghamton.edu>
+Date:   Thu May 9 01:17:54 2019 -0400
+
+    1
+
+ Big-Boss/WebVersion/map.js   | 182 +++++++++++++++++++++++++++++++++++++++++++
+ Big-Boss/WebVersion/timer.js | 132 +++++++++++++++++++++++++++++++
+ 2 files changed, 314 insertions(+)
+
+commit 41590a4d334f8e227d8a5e66ca1611e67dbd471b
+Author: Wen Yang <wyang41@binghamton.edu>
+Date:   Wed May 8 01:26:04 2019 -0400
+
+    1
+
+ Big-Boss/WebVersion/game.js                    |  97 +++++++++++++++++
+ Big-Boss/WebVersion/images/g/Thumbs.db         | Bin 0 -> 8704 bytes
+ Big-Boss/WebVersion/images/g/bar.gif           | Bin 0 -> 338 bytes
+ Big-Boss/WebVersion/images/g/behind.gif        | Bin 0 -> 15941 bytes
+ Big-Boss/WebVersion/images/g/fighterShadow.gif | Bin 0 -> 90 bytes
+ Big-Boss/WebVersion/images/g/front.gif         | Bin 0 -> 33845 bytes
+ Big-Boss/WebVersion/images/g/loading.jpg       | Bin 0 -> 138314 bytes
+ Big-Boss/WebVersion/interface.js               | 137 +++++++++++++++++++++++++
+ Big-Boss/WebVersion/util.js                    |  42 ++++++++
+ 9 files changed, 276 insertions(+)
+
+commit 542a15f38fd9f98c2b35991ce48e704b58ddf898
+Author: Wen Yang <wyang41@binghamton.edu>
+Date:   Wed May 8 01:25:22 2019 -0400
+
+    1
+
+ Big-Boss/WebVersion/class.js | 12 ------------
+ 1 file changed, 12 deletions(-)
+
+commit 0a3e8a5ebe5cf457998e3f47e53be0f1163968cf
+Author: Wen Yang <wyang41@binghamton.edu>
+Date:   Mon May 6 20:27:18 2019 -0400
+
+    1
+
+ Big-Boss/WebVersion/main.js | 86 +++++++++++++++++++++++++++++++--------------
+ 1 file changed, 59 insertions(+), 27 deletions(-)
+
+commit d94a58bd96218b6027d005fe9db6658cfb131a21
+Author: Wen Yang <wyang41@binghamton.edu>
+Date:   Sun May 5 23:03:27 2019 -0400
+
+    1
+
+ Big-Boss/WebVersion/class.js                     | 107 +++++++++++++++++++++++
+ Big-Boss/WebVersion/images/hitEffect/Thumbs.db   | Bin 0 -> 7680 bytes
+ Big-Boss/WebVersion/images/hitEffect/defense.gif | Bin 0 -> 614 bytes
+ Big-Boss/WebVersion/images/hitEffect/heavy.gif   | Bin 0 -> 557 bytes
+ Big-Boss/WebVersion/images/hitEffect/light.gif   | Bin 0 -> 225 bytes
+ 5 files changed, 107 insertions(+)
+
+commit 4257c34e295c9e78e0b243d7538c2ea772a3271f
+Author: Wen Yang <wyang41@binghamton.edu>
+Date:   Fri May 3 18:15:53 2019 -0400
+
+    1
+
+ Big-Boss/README.md | 16 +++++++++-------
+ 1 file changed, 9 insertions(+), 7 deletions(-)
+
+commit 6401941990573756c633fbf21a28f2c245460360
+Author: Wen Yang <wyang41@binghamton.edu>
+Date:   Fri May 3 18:07:51 2019 -0400
+
+    1
+
+ Big-Boss/README.md            | 14 +++++++++-----
+ Big-Boss/WebVersion/config.js | 21 +++++++++++++++++++++
+ Big-Boss/WebVersion/main.js   | 29 +++++++++++++++++++++++++++++
+ 3 files changed, 59 insertions(+), 5 deletions(-)
+
+commit 6334a51c653f7f1cce781c04f906139846030b41
+Author: Wen Yang <wyang41@binghamton.edu>
+Date:   Thu May 2 00:46:05 2019 -0400
+
+    ios-trial
+
+ Big-Boss/BigBoss/BigBoss.xcodeproj/project.pbxproj | 597 +++++++++++++++++++++
+ .../project.xcworkspace/contents.xcworkspacedata   |   7 +
+ .../xcshareddata/IDEWorkspaceChecks.plist          |   8 +
+ .../UserInterfaceState.xcuserstate                 | Bin 0 -> 5152 bytes
+ .../xcschemes/xcschememanagement.plist             |  14 +
+ Big-Boss/BigBoss/BigBoss/Actions.sks               | Bin 0 -> 1892 bytes
+ Big-Boss/BigBoss/BigBoss/AppDelegate.swift         |  46 ++
+ .../AppIcon.appiconset/Contents.json               |  98 ++++
+ .../BigBoss/BigBoss/Assets.xcassets/Contents.json  |   6 +
+ .../BigBoss/Base.lproj/LaunchScreen.storyboard     |  25 +
+ .../BigBoss/BigBoss/Base.lproj/Main.storyboard     |  24 +
+ Big-Boss/BigBoss/BigBoss/GameScene.sks             | Bin 0 -> 4694 bytes
+ Big-Boss/BigBoss/BigBoss/GameScene.swift           |  89 +++
+ Big-Boss/BigBoss/BigBoss/GameViewController.swift  |  50 ++
+ Big-Boss/BigBoss/BigBoss/Info.plist                |  47 ++
+ Big-Boss/BigBoss/BigBossTests/BigBossTests.swift   |  34 ++
+ Big-Boss/BigBoss/BigBossTests/Info.plist           |  22 +
+ .../BigBoss/BigBossUITests/BigBossUITests.swift    |  34 ++
+ Big-Boss/BigBoss/BigBossUITests/Info.plist         |  22 +
+ p6-final/log.txt                                   |  12 +-
+ 20 files changed, 1134 insertions(+), 1 deletion(-)
+
+commit 5dd258f605cb15776e269064adb59ea92fcdfcae
+Author: Wen Yang <wyang41@binghamton.edu>
+Date:   Tue Apr 30 21:53:46 2019 -0400
+
+    p8
+
+ Big-Boss/README.md | 9 +++++++++
+ 1 file changed, 9 insertions(+)
+
