@@ -808,3 +808,105 @@ var WaveBoxing = Fighter.subClass( function( master ){
 
 					return this;
 				},
+				enemyDefense: function(){
+
+					this.master.enemy.attack.audio.play( 'sound/defense.mp3' );
+	
+					this.master.enemy.waveBoxing.ready_firing = false;
+	
+					this.attackEffect.start( this.easing[ 4 ], this.left, this.top );
+	
+					var attack_light = this.master.statusManage.get().attack_light;
+	
+					if ( this.master.enemy.statusManage.isStand() ){
+						this.master.enemy.play( 'force_stand_up_defense' );
+					}else{
+						this.master.enemy.play( 'force_stand_crouch_defense' );
+					}
+	
+					this.master.enemy.animate.start( ( attack_light ? -50 : -100 ) * this.master.enemy.direction, 0, 300, 'linear' );
+					
+					var distance = this.master.statusManage.get().enemy_distance_type;
+	
+					if ( this.master.enemy.border && ( distance === 'near' || distance === 'middle' ) ){
+						this.master.animate.start( ( attack_light ? -50 : -100 ) * this.master.direction, 0, 300, 'linear' );		
+					}
+	
+					this.master.enemy.bloodBar.reduce( this.easing[ 7 ] || 0 );
+	
+				},
+	
+				enemyBeat: function(){
+	
+					this.master.enemy.waveBoxing.ready_firing = false;
+	
+					this.attackEffect.start( this.easing[ 4 ], this.left, this.top );
+	
+					var attack_light = this.master.statusManage.get().attack_light;
+	
+					if ( this.master.enemy.statusManage.isJump() ){
+						this.master.enemy.play( 'heavy_attacked_fall_down', true );
+					}
+	
+					else{
+						this.master.enemy.play( this.easing[ 5 ], true );
+					}
+	
+					var distance = this.master.statusManage.get().enemy_distance_type;
+	
+					if ( this.master.enemy.border && ( distance === 'near' || distance === 'middle' ) ){
+						this.master.animate.start( ( attack_light ? -70 : -120 ) * this.master.direction, 0, 300, 'linear' );		
+					}
+	
+					this.master.enemy.bloodBar.reduce( this.easing[ 6 ] || 50 );
+					
+					this.master.enemy.attack.audio.play( 'sound/hit_heavy_boxing.mp3' );
+	
+				},
+	
+					start: function( dir, state ){
+						var self = this;
+						this.ready_firing = true;
+						this.timer = setTimeout( function(){
+							if ( self.ready_firing === false ) {
+								return clearTimeout( self.timer );
+							}
+	
+							self.easing = state.attack_config;
+							self.firing = true;
+							self.direction = dir;
+							self.top = self.master.top + 40;
+	
+							if ( self.direction === -1 ){
+								self.left = self.master.left + self.width - 90;
+							}else{
+								self.left = self.master.left + self.master.width + 50;	
+							}
+	
+							self.frames.start( state.bg, state.framesNum, state.easing[2], state.repeat, state.position, self.direction );
+	
+							self.animate.start( state.easing[0] * self.direction, 0, state.easing[2] * Config.fps * state.framesNum, state.easing[3] );
+	
+						}, 150 )
+						
+					},
+	
+					stop: function(){
+						this.firing = false;
+						this.frames.stop();
+					},
+	
+					crossBorder: function( left ){
+						var maxX =  Map.getMaxX();
+						if ( left < 15 || left > maxX - this.width ){
+							this.stop();
+						}
+						return left;
+					}
+		
+			 } 
+		
+	)
+
+
+WaveBoxing.interface( 'SpiritFrames', Interfaces.SpiritFrames );
