@@ -1,4 +1,4 @@
-#Germ War
+# Germ War
 
 This is an animation game based on cocos2d-x and its prototype is Thunder Cross. I changed the UI and background into Germ War, plus different kinds of bullets, enemies and supplies.
 
